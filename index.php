@@ -3,6 +3,7 @@
 </head>
 <body>
 <form name="request_demo" id="request_demo">
+          <span class="rsmessage"></span>
           <table class="table table-responsive">
           	<tr>
             	<td>Name</td>
@@ -88,11 +89,12 @@
               if(data==1){
                 jQuery(".rsmessage").fadeIn();
                 jQuery(".rsmessage").html("<span class='success-msg'>Thank you for the Request. We will contact you shortly.</span>");
-                clear_form_elements("request_demo");
+                $("#request_demo")[0].reset();
               }
               else {
                 jQuery(".rsmessage").fadeIn();
-                jQuery(".rsmessage").html("<span class='error-msg'>Request failed. Please, send an email to <a href='mailto:sales@nimbleaccounting.com'>sales@nimbleaccounting.com</a></span>");clear_form_elements("idForm");
+                jQuery(".rsmessage").html("<span class='error-msg'>Request failed. Please, send an email to <a href='mailto:sales@nimbleaccounting.com'>sales@nimbleaccounting.com</a></span>");
+                $("#request_demo")[0].reset();
               }
             }});
             //form.submit();
